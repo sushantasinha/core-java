@@ -1,13 +1,7 @@
 package com.java.model;
 
-import java.util.Date;
-
 public class TransactionModel {
-	@Override
-	public String toString() {
-		return "TransactionModel [toAccount=" + toAccount + ", transactionDate=" + transactionDate
-				+ ", transactionAmount=" + transactionAmount + ", comment=" + comment + "]";
-	}
+	
 	int toAccount;
 	String transactionDate;
 	float transactionAmount;
@@ -46,9 +40,9 @@ public class TransactionModel {
 		this.comment = comment;
 	}
 	
-	
-	
-	
-	
-	
+	@Override
+	public String toString() {
+		return "TransactionModel [toAccount=" + toAccount + ", transactionDate=" + transactionDate
+				+ ", transactionAmount=" + transactionAmount + ", comment=" + comment + "]";
+	}	
 }

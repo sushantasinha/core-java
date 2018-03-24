@@ -5,34 +5,31 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 import com.java.model.TransactionModel;
 
-public class CallableTransactionService implements Callable<Map<String, TransactionModel>>{
+public class CallableTransactionService implements Callable<Map<String, TransactionModel>> {
 
 	int bankAccountNumber;
-	
-	public CallableTransactionService(int bankAccountNumber){
+
+	public CallableTransactionService(int bankAccountNumber) {
 		this.bankAccountNumber = bankAccountNumber;
 	}
-	
+
 	@Override
-	public Map<String, TransactionModel> call() throws Exception {		
+	public Map<String, TransactionModel> call() throws Exception {
 		return getAllTransactionDetails();
 	}
 
-		
-	public Map<String, TransactionModel> getAllTransactionDetails(){//making it public to test non-thread process
-		
+	public Map<String, TransactionModel> getAllTransactionDetails() {//making it public to test non-thread process
+
 		Map<String, TransactionModel> transactionModelMap = new HashMap<String, TransactionModel>();
-		for(int i = 0; i < 10; i++){
-			TransactionModel transactionModel = new TransactionModel((int)Math.random(), "2018-01-28", 123.234f, "Comment" + i);
-			transactionModelMap.put("T" + Integer.toString(i), transactionModel); 
+		for (int i = 0; i < 10; i++) {
+			TransactionModel transactionModel = new TransactionModel((int) Math.random(), "2018-01-28", 123.234f,
+					"Comment" + i);
+			transactionModelMap.put("T" + Integer.toString(i), transactionModel);
 			System.out.println("$$$ Transaction Added: " + transactionModel);
 		}
-		
-		
+
 		return transactionModelMap;
-		
+
 	}
-	
-	
-	
+
 }

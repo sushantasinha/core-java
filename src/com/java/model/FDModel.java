@@ -1,7 +1,5 @@
 package com.java.model;
 
-import java.util.Date;
-
 public class FDModel {
 	String fdDate;
 	float fdAmount;
@@ -28,12 +26,7 @@ public class FDModel {
 	public void setFdAmount(float fdAmount) {
 		this.fdAmount = fdAmount;
 	}
-	@Override
-	public String toString() {
-		return "FDModel [fdDate=" + fdDate + ", fdAmount=" + fdAmount + ", comment=" + comment + ", fdPeriod="
-				+ fdPeriod + "]";
-	}
-
+	
 	public String getComment() {
 		return comment;
 	}
@@ -47,5 +40,9 @@ public class FDModel {
 		this.fdPeriod = fdPeriod;
 	}
 	
-
+	@Override
+	public String toString() {
+		return "FDModel [fdDate=" + fdDate + ", fdAmount=" + fdAmount + ", comment=" + comment + ", fdPeriod="
+				+ fdPeriod + "]";
+	}
 }

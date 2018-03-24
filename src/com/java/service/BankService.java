@@ -2,15 +2,13 @@ package com.java.service;
 
 import java.util.Map;
 import java.util.concurrent.*;
-
 import com.java.concurrent.CallableFDDetailsService;
 import com.java.concurrent.CallableTransactionService;
 import com.java.model.FDModel;
 import com.java.model.TransactionModel;
+
 public class BankService {
 
-	
-	
 	public static void main(String []args) throws InterruptedException, ExecutionException{
 		//Thread
 		ExecutorService es = Executors.newFixedThreadPool(2);//try with 1, and see result
@@ -24,6 +22,11 @@ public class BankService {
 		for(String transactionId : transactionServiceFuture.get().keySet()){
 			System.out.println("Transaction Printing from Main::: " + transactionId );
 		}
+		
+		//Need to close ExecutorService. If you running this project in Eclipse 
+		//(with commenting out below line), you can observe Terminate option still enable in Eclipse console
+		es.shutdown();
+		
 		
 		//Without Thread
 		/*CallableTransactionService callableTransactionService = new CallableTransactionService(106);
