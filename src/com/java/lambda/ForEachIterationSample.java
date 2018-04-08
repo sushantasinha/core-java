@@ -1,8 +1,7 @@
- package com.java.lambda;
+package com.java.lambda;
 
 import java.util.Arrays;
 import java.util.List;
-
 import com.java.model.Person;
 
 public class ForEachIterationSample {
