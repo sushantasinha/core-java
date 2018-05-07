@@ -1,4 +1,4 @@
-package com.java.collection;
+package com.java.hashcodeAndEquals;
 
 import java.util.HashMap;
 import java.util.Map;

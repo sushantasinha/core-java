@@ -1,4 +1,4 @@
-package com.java.lambda;
+package com.java.java8.lambda;
 
 //Note: TO use Lambda,an interface can have as many as methods but this will only have one abstract method. This is called Functional interface
 //Before Java 8, an interface can only have abstract methods but in java 8, there can be method implementations as well in interface
