@@ -1,14 +1,15 @@
-package com.java.lambda;
+package com.java.java8.lambda;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 import com.java.model.Person;
 
-public class Lambda5_Predicate {
+public class Lambda6_Consumer {
 
 	public static void main(String[] args) {
 		
@@ -23,13 +24,13 @@ public class Lambda5_Predicate {
 		Collections.sort(personList, (Person person1, Person person2) -> person1.getLastName().compareTo(person2.getLastName()));
 		
 		System.out.println("\nPrinting entire list");
-		printSelective(personList, p -> true);
+		printSelective(personList, p  -> true, p -> System.out.println(p));
 		
 		System.out.println("\nPrinting entire list: Last Name Starts with C");
-		printSelective(personList, p -> p.getLastName().toUpperCase().startsWith("C"));
+		printSelective(personList, p -> p.getLastName().toUpperCase().startsWith("C"), p -> System.out.println(p.getFirstName()));
 				
 		System.out.println("\nPrinting entire list: First Name Starts with C");
-		printSelective(personList, p -> p.getFirstName().toUpperCase().startsWith("C"));
+		printSelective(personList, p -> p.getFirstName().toUpperCase().startsWith("C"), p -> System.out.println(p.getFirstName()));
 				
 	}
 
@@ -40,10 +41,10 @@ public class Lambda5_Predicate {
 	}
 	
 	
-	private static void printSelective(List<Person> personList, Predicate<Person> c) {
+	private static void printSelective(List<Person> personList, Predicate<Person> c, Consumer<Person> consumer) {
 		for(Person person: personList){
 			if(c.test(person)){
-				System.out.println(person);
+				consumer.accept(person);
 			}
 		}
 	}

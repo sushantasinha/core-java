@@ -1,4 +1,4 @@
-package com.java.lambda;
+package com.java.java8.lambda;
 
 public class Lambda10_MethodReference2 {
 
